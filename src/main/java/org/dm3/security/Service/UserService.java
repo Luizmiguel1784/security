@@ -1,7 +1,7 @@
 package org.dm3.security.Service;
 
 import org.dm3.security.DTO.UserRequest;
-import org.dm3.security.config.UserConfig;
+import org.dm3.security.config.SecurityConfig;
 import org.dm3.security.entities.User;
 import org.dm3.security.entities.enums.Role;
 import org.dm3.security.repositories.UserRepository;
@@ -11,12 +11,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 
-    private final UserConfig userConfig;
+    private final SecurityConfig securityConfig;
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserService(UserConfig userConfig, UserRepository userRepository, PasswordEncoder passwordEncoder) {
-        this.userConfig = userConfig;
+    public UserService(SecurityConfig securityConfig, UserRepository userRepository, PasswordEncoder passwordEncoder) {
+        this.securityConfig = securityConfig;
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }

@@ -11,12 +11,12 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private long Id;
     private String Name;
-    private String email;
+    private String Email;
     private String Password;
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Role Role;
 
 
 }

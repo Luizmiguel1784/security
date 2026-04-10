@@ -3,10 +3,7 @@ package org.dm3.security.controller;
 import org.dm3.security.DTO.UserRequest;
 import org.dm3.security.Service.UserService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -18,10 +15,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/users")
+    @PostMapping
     public ResponseEntity createUser(@RequestBody UserRequest request){
 
             return ResponseEntity.ok(userService.createUser(request));
         }
+    @GetMapping ("/admin")
+    public String admin(){
+        return "Acesso ADMIN";
+    }
 
 }
